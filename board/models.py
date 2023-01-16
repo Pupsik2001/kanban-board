@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Board(models.Model):
     id = models.AutoField(primary_key=True)
     manage = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    board = models.Charfield(max_length=100)
+    board = models.CharField(max_length=100)
 
 
     class Meta:
