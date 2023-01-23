@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
     # my app 
     'board',
-    'accounts',
+    # 'accounts',
 ]
 
 MIDDLEWARE = [
