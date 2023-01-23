@@ -1,0 +1,15 @@
+{% for board in boards %}
+
+	<h2>{{ board.name }}</h2>
+	<p>{{ board.description }}</p>
+	<ul>
+		{% for column in boardd.column_set.all %}
+			<li>{{ column.name }}</li>
+		{% endfor %}
+	</ul>
+		<ul>
+			{% for card in column.card_set.all %}
+				<li>{{ card.title }}</li>
+			{% endfor %}
+		</ul>
+{% endfor %}

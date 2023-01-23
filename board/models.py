@@ -5,14 +5,17 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Board(models.Model):
-    id = models.AutoField(primary_key=True)
-    manage = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    board = models.CharField(max_length=100)
-    done = models.BoaleanField(default=False)
+    name = models.CharField(max_length=100)
+    description = models.TextField()
 
+class Column(models.Model):
+    name = models.CharField(max_length=100)
+    board = models.ForeignKey(Board, on_delete=models.CASCADE)
+    position = models.IntegerField()
 
-    class Meta:
-        ordering = ['id']
-
-    def __str__(self):
-        return self.board + ' - ' + str(self.done)
+class Card(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    column = models.ForeignKey(Column, on_delete=models.CASCADE)
+    position = models.IntegerField()
+    
