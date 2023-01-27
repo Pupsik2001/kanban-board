@@ -18,11 +18,19 @@ from django.contrib import admin
 from django.urls import path, include
 
 from board import urls as board_urls 
+from account.views import (
+    login_view,
+    logout_view,
+    register_view,
+)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('board/', include(board_urls, namespace='board')),
+    path('login/', login_view),
+    path('logout/', logout_view),
+    path('register/', register_view),
 ]
 
 
