@@ -1,8 +1,8 @@
 from django import forms
-from .models import Board
+from .models import Card
 
-class BoardForm(forms.ModelForm):
+class CardForm(forms.ModelForm):
 	class Meta:
-		model = Board 
-		fields = ['Board']
+		model = Card
+		fields = ['Card']
 		
