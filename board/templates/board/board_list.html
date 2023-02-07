@@ -3,7 +3,7 @@
 	<h2>{{ board.name }}</h2>
 	<p>{{ board.description }}</p>
 	<ul>
-		{% for column in boardd.column_set.all %}
+		{% for column in board.column_set.all %}
 			<li>{{ column.name }}</li>
 		{% endfor %}
 	</ul>
